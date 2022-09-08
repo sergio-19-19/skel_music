@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Icon } from 'ionicons/dist/types/components/icon/icon';
+import {Router} from '@angular/router'
 
 
 @Component({
@@ -14,9 +15,12 @@ export class HomePage {
     centeredSlides:true,
     speed:400
   };
-  constructor() {}
+  constructor(private router:Router) {}
+  finish(){
+  this.router.navigateByUrl("/login")  
+  }
+  ngOnInit() {}
 }
-
 
 /*
 			▶skel_music⏸

@@ -1,7 +1,7 @@
 <ion-content  [fullscreen]="true" class="ion-padding">
   <ion-slides pager="true" [options]="slideOpt">
     <ion-slide>
-      <ion-icon name="close-circle-outline"></ion-icon>
+      <ion-icon name="close-circle-outline" (click)="finish()"></ion-icon>
       <img src="assets/imagenes/logo_skel_music.jpg" alt="logo de skel_music"/>
       <h1>disfrute la musica cuando quieras</h1>
       <h2>y en donde quieras que sea🔛</h2>
@@ -39,11 +39,6 @@
       <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
 </ion-content>
 
 

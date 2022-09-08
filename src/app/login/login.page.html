@@ -1,9 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <figure text-center class="ion-padding">
+    <img src="assets/imagenes/logo_skel_music.jpg" alt="logo de skel_music"/>
+  </figure>
+  <form [FormGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <ion-item> 
+      <ion-label>email</ion-label>
+      <ion-input formcontrolName="email"></ion-input>
+  </ion-item>
+  </form>
 </ion-content>
