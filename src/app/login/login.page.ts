@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormBuilder, Validators,FormControl} from "@angular/forms"
+import { FormGroup,FormBuilder,FormControl,Validators,} from '@angular/forms';
+import { AuthenticateService } from "../services/authenticate.service";
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -8,17 +11,53 @@ import {FormGroup,FormBuilder, Validators,FormControl} from "@angular/forms"
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
-  constructor(private formBuilder:FormBuilder) {
+  validation_messages = {
+    email: [
+      { type:"required",message:""}
+    ],
+    password: [
+      { type:"required",message:""}
+    ]
+  };
+  errorMessage: string ="";
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService:AuthenticateService,
+    private router:Router,
+    private storage:Storage
+    ){
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
         "",
-        Validators.compose([
-        Validators.required,
-        Validators.pattern("expresion regular")
+          Validators.compose([
+          Validators.required,
+          Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
         ])
-        )  
+    ),
+       password: new FormControl(
+        "",
+         Validators.compose([
+         Validators.required,
+         Validators.minLength(6)
+      ])
+  )
+
     });
-   }
+  }
 
   ngOnInit() {}
+  loginUser(credentials){
+    this.authService.loginUser(credentials).then(res => {
+     this.errorMessage = "";
+     this.storage.create();
+     this.storage.set("isUserLoggedIn", true);
+     this.router.navigate(['/home']);
+    }).catch(err=>{
+      this.errorMessage = err;
+    });
+
+  }
+  goToRegister(){
+    this.router.navigate(['/register']);
+  }
 }
