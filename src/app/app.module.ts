@@ -8,11 +8,21 @@ import { IonicModule, IonicRouteStrategy,} from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { SQLite } from '@ionic-native/sqlite';
+import { SongsModalPageModule } from './songs-modal/songs-modal.module';
+
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,IonicStorageModule.forRoot()],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    SongsModalPageModule,
+    IonicStorageModule.forRoot(),
+    SongsModalPageModule
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

@@ -14,11 +14,11 @@ export class LoginGuard implements CanActivate {
     this.storage.create();
   }
   async canActivate() {
-    const isUserLoggedIn = await this.storage.get("isUserLoggedIn");
-    if (isUserLoggedIn) {
+    const isIntroShowed = await this.storage.get("isIntroShowed");
+    if (isIntroShowed) {
       return true;
     } else {
-      this.router.navigateByUrl("/login");
+      this.router.navigateByUrl("/intro");
     }
   }
 }

@@ -1,5 +1,5 @@
 ion-content {
-  --background: rgb(0, 255, 213);
+  --background: rgba(52, 164, 54, 0.743);
   font-family: "Times New Roman",Times,serif;
 }
 
@@ -28,7 +28,7 @@ ion-slide > ion-icon {
   color:black;
   font-size: 48px;
 }
-ion-slide > ion-icon[name="close-circle-outline"]{
+ion-slide > ion-icon[name="play-circle-outline"]{
   float: right;
   color: var(--ion-color-primary);
   font-size: 48px;

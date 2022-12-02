@@ -1,3 +1,12 @@
+<ion-header>
+  <ion-toolbar color = "mi_color">
+    <ion-buttons>
+      <ion-button (click)="gobackLogin()">
+        ☣regresar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
  <ion-content [fullscreen]="true">
  <figure class= "ion-text-center ion-padding">
    <img src="assets/imagenes/logo_skel_music.jpg" alt="logo de skel_music"/>
@@ -24,7 +33,7 @@
      </ng-container>
   </div>
   {{ errorMessage }}
-  <ion-button
+  <ion-button custom button
   expand="full"
   shape="round"
   color="success"
@@ -32,7 +41,7 @@
     </form>
   </ion-content>
   <ion-footer class = "ion-text-center">
-    <ion-button (click)="goToRegister()" shape="round" fill="outline" color="#eb94d0;">😎REGISTRAR🌍</ion-button>
+    <ion-button custom button  (click)="goToRegister()" shape="round" fill="outline" color="success">😎REGISTRATE AQUI🌍</ion-button>
   </ion-footer>
 
 

@@ -6,7 +6,20 @@ import { MenuPage } from './menu.page';
 const routes: Routes = [
   {
     path: '',
-    component: MenuPage
+    component: MenuPage,
+    children: [
+      {
+        path: "homeapp",
+        loadChildren: () =>
+        import('../homeapp/homeapp.module').then( m => m.HomeappPageModule)
+      },
+      {
+        path: 'settings',
+        loadChildren: () =>
+        import('../settings/settings.module').then( m => m.SettingsPageModule)
+      },
+
+    ]
   }
 ];
 

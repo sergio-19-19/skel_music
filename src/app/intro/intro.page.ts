@@ -8,10 +8,12 @@ import {Storage} from '@ionic/storage';
 })
 export class IntroPage implements OnInit {
   slideOps = {
-    initialSlide: 0,
-    slidesPerview:1,
-    centeredSlides:true,
-    speed:400
+    loop: false,
+    slidesPerView: 4,
+    slidesPerGroup: 4,
+    grabCursor: true,
+    spaceBetween: 30,
+    speed: 400,
   };
 
  constructor(private router:Router,private storage:Storage) { }
