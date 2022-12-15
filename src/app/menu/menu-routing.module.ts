@@ -9,7 +9,7 @@ const routes: Routes = [
     component: MenuPage,
     children: [
       {
-        path: "homeapp",
+        path: 'homeapp',
         loadChildren: () =>
         import('../homeapp/homeapp.module').then( m => m.HomeappPageModule)
       },
@@ -17,6 +17,11 @@ const routes: Routes = [
         path: 'settings',
         loadChildren: () =>
         import('../settings/settings.module').then( m => m.SettingsPageModule)
+      },
+      {
+        path: 'sports',
+        loadChildren: () =>
+        import('../sports/sports.module').then( m => m.SportsPageModule)
       },
 
     ]

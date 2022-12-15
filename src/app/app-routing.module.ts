@@ -41,11 +41,14 @@ const routes: Routes = [
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   },
   {
+    path: 'sports',
+    loadChildren: () => import('./sports/sports.module').then( m => m.SportsPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'e404',
     pathMatch: 'full',
   },
-
   {
     path: 'e404',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)

@@ -1,0 +1,16 @@
+ion-toolbar{
+  background-color: var(--ion-color-mi_color);
+}
+
+ion-content {
+  #map {
+    width: 100%;
+    height: 65%;
+    opacity: 0;
+    transition: opacity 150ms ease-in;
+    display: block;
+    &.show-map{
+      opacity: 1;
+}
+}
+}

@@ -10,7 +10,10 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class MenuPage implements OnInit {
 
-  constructor(private menu: MenuController, private navCtrl: NavController, private storage: Storage,private router : Router ) {
+  constructor(private menu: MenuController,
+    private navCtrl: NavController,
+    private storage: Storage,
+    private router : Router ) {
     this.storage.create();
   }
 
@@ -28,5 +31,9 @@ export class MenuPage implements OnInit {
   }
   gotoSettings(){
     this.router.navigateByUrl("/settings")
+  }
+  gotoSports(){
+    this.navCtrl.navigateRoot("/sports")
+
   }
 }
